@@ -1,0 +1,21 @@
+data/
+
+# Research data, generated files, and local configuration
+outputs/
+reports/tables/
+reports/figures/
+.local/
+work/
+.venv/
+venv/
+.env
+.env.*
+.ipynb_checkpoints/
+__pycache__/
+*.py[cod]
+*.duckdb
+*.duckdb.wal
+*.log
+.DS_Store
+Thumbs.db
+desktop.ini
