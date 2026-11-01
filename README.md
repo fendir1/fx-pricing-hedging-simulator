@@ -76,3 +76,46 @@ Simulated profitability depends on the modeling assumptions.
 ## Development approach
 
 Development approach: This is an AI-assisted research project. Raymond Fendi defined the business objectives and provided FX domain direction. OpenAI Codex assisted with implementation, validation code, and documentation. CONTRIBUTIONS.md records completed design decisions, reviews, and validation.
+
+<!-- notebook-02-sampling_02_v1:start -->
+## Notebook 02 progress
+
+- All-hours quote reconstruction, ten-second sampling, three-minute candles,
+  SMA/EMA and close-to-average distances are implemented.
+- Execution scope: full available history.
+- Processed-prefix machine checks passed; human output review is pending.
+- Notebook 01's accepted files remain unchanged.
+- Interpolated observations are research inputs, not execution liquidity.
+- Moving-average distance is a measurement, not a trading instruction.
+
+Results pending execution and validation.
+<!-- notebook-02-sampling_02_v1:end -->
+
+<!-- notebook-03-volatility_03_v1:start -->
+## Notebook 03 progress
+
+Multiscale RMS movement, population SD and supporting diagnostics are implemented.
+Execution scope: full available history.
+Machine checks passed; human output review remains pending.
+Measurements retain missing-data, reconstruction and availability information.
+No execution policy or forecasting model is implemented by this notebook.
+
+Results pending execution and validation.
+<!-- notebook-03-volatility_03_v1:end -->
+
+<!-- notebook-04-entropy_04_v1:start -->
+## Notebook 04 progress
+
+Conditional entropy, sample entropy and spread-to-price transfer entropy
+are implemented with ten-second updates and five agreed lookbacks.
+
+Execution scope: prefix through 2016-01-31.
+Machine checks passed for the processed prefix.
+Codex completed technical review of the January 4 saved outputs.
+Expanded January outputs await review.
+
+Short-window sample entropy can lack matching patterns or reach its upper
+bound with limited support. These states are retained explicitly.
+
+Results pending execution and validation.
+<!-- notebook-04-entropy_04_v1:end -->

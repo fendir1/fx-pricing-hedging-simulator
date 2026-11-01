@@ -1,35 +1,37 @@
 # Project state
 
-- Current stage: Notebook 01 and Notebook 01a review complete.
-- ETL run: `etl_01_v3`.
-- Notebook 00: full original-history audit executed.
-- Notebook 01: full-history machine validation passed.
-- Notebook 01a: review reports generated.
-- Human ETL review: `accepted`.
-- Size denomination: millions of EUR, confirmed by Raymond.
+- Notebooks 00, 01 and 01a: executed and reviewed.
+- Notebook 02: full-history machine checks and Codex technical review completed.
+- Notebook 03: full-history machine checks and Codex technical review completed.
+- Current stage: Notebook 04 output review.
+- Notebook 04 run: `entropy_04_v1`.
+- Execution scope: prefix through 2016-01-31.
+- Machine checks: passed for the expanded prefix.
+- Notebook 04 human review: pending.
 
 ## Locations
 
-- Original CSVs: `data/`.
-- Downloaded exports: `data/2017 2018 investigation/`.
-- Observed quotes: `data/processed/etl_01_v3/observed/`.
-- Analysis quotes: `data/processed/etl_01_v3/analysis/`.
-- Review report: `reports/tables/etl/etl_01_v3/01a_output_validation.html`.
-- Review answers: `reports/tables/etl/etl_01_v3/01a_review_answers.json`.
+- Input: `data/processed/sampling_02_v1/sampled_10s/`.
+- Features: `outputs/features/entropy/entropy_04_v1/`.
+- Reports: `reports/tables/entropy/entropy_04_v1/`.
+- Figures: `reports/figures/entropy/entropy_04_v1/`.
 
 ## Outstanding matters
 
-- CSV size denomination is confirmed by Raymond as millions of EUR.
-- Exact historical provider closure completeness remains a documented limitation.
-- Locked quotes and zero-size observations are excluded from P&L modeling inputs.
-- Execution and valuation handling will be designed during accounting.
-- Locked-quote decision: `retain_flagged`.
-- Boundary-anchor decision: `allow_current`.
-
-## Outputs affected
-
-No additional outputs invalidated by this review.
+- Review entropy values, support, missing estimates, timing and runtime.
+- Review the initial prefix before expanding processing.
+- Exact historical provider closure completeness remains a limitation.
+- Interpolation can introduce measured regularity.
+- Descriptive entropy bands are not validated trading thresholds.
+- Compare entropy candidates after regression is available.
 
 ## Next step
 
-Discuss Notebook 02 sampling, candles and indicators before building.
+Review Notebook 04 saved outputs.
+Then expand processing gradually using complete continuation cells.
+
+## Outputs invalidated
+
+None from the accepted upstream definitions.
+Notebook 04 creates a separate versioned feature output.
+Changed inputs or feature definitions require compatible regenerated outputs.
