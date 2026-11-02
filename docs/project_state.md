@@ -3,10 +3,12 @@
 - Notebooks 00, 01 and 01a: executed and reviewed.
 - Notebook 02: full-history machine checks and Codex technical review completed.
 - Notebook 03: full-history machine checks and Codex technical review completed.
-- Current stage: Notebook 04 output review.
+- Current stage: Notebook 04 full-history output review.
 - Notebook 04 run: `entropy_04_v1`.
-- Execution scope: prefix through 2016-01-31.
-- Machine checks: passed for the expanded prefix.
+- Execution scope: full available history through 2026-10-16.
+- Full-history machine checks: passed.
+- January technical review: completed by Codex.
+- Full-history technical review: passed by Codex on 2026-11-01.
 - Notebook 04 human review: pending.
 
 ## Locations
@@ -14,24 +16,21 @@
 - Input: `data/processed/sampling_02_v1/sampled_10s/`.
 - Features: `outputs/features/entropy/entropy_04_v1/`.
 - Reports: `reports/tables/entropy/entropy_04_v1/`.
-- Figures: `reports/figures/entropy/entropy_04_v1/`.
+- January figures: `reports/figures/entropy/entropy_04_v1/`.
 
 ## Outstanding matters
 
-- Review entropy values, support, missing estimates, timing and runtime.
-- Review the initial prefix before expanding processing.
+- Short-window sample entropy can be undefined or saturated.
 - Exact historical provider closure completeness remains a limitation.
 - Interpolation can introduce measured regularity.
-- Descriptive entropy bands are not validated trading thresholds.
+- Descriptive bands are not validated trading thresholds.
 - Compare entropy candidates after regression is available.
 
 ## Next step
 
-Review Notebook 04 saved outputs.
-Then expand processing gradually using complete continuation cells.
+Discuss Notebook 05 forecasting targets and chronological validation.
 
 ## Outputs invalidated
 
-None from the accepted upstream definitions.
-Notebook 04 creates a separate versioned feature output.
-Changed inputs or feature definitions require compatible regenerated outputs.
+None from the agreed upstream definitions.
+Changing inputs or feature definitions requires compatible regenerated outputs.

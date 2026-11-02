@@ -106,16 +106,10 @@ Results pending execution and validation.
 <!-- notebook-04-entropy_04_v1:start -->
 ## Notebook 04 progress
 
+Full-history entropy processing and machine validation are complete.
+Codex technical review passed on 2026-11-01.
+
 Conditional entropy, sample entropy and spread-to-price transfer entropy
-are implemented with ten-second updates and five agreed lookbacks.
-
-Execution scope: prefix through 2016-01-31.
-Machine checks passed for the processed prefix.
-Codex completed technical review of the January 4 saved outputs.
-Expanded January outputs await review.
-
-Short-window sample entropy can lack matching patterns or reach its upper
-bound with limited support. These states are retained explicitly.
-
-Results pending execution and validation.
+retain their agreed definitions, support counts and availability timestamps.
+Short-window sample-entropy limitations remain documented.
 <!-- notebook-04-entropy_04_v1:end -->

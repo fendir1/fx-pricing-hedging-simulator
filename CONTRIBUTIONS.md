@@ -153,3 +153,40 @@ Raymond's review of Notebook 04 execution outputs remains pending.
 - Expanded-prefix machine checks passed when this record was written.
 - Expanded output review and human acceptance remain pending.
 <!-- notebook-04-january-progress-entropy_04_v1:end -->
+
+<!-- notebook-04-full-history-entropy_04_v1:start -->
+## Notebook 04 — full-history execution
+
+- Raymond Fendi executed the January extension and supplied its outputs.
+- Codex reviewed the saved January reports, figure and provenance.
+- All 4,144 January recorded checks were zero.
+- Weekend resets and fresh lookbacks reconciled.
+- Short-window sample-entropy support limitations were documented.
+- Estimator definitions were retained for the planned later comparison.
+- Execution has expanded to full available history through 2026-10-16.
+- Full-history machine checks passed when this record was written.
+- Previously completed January checkpoints were preserved.
+- Full-history output review and human acceptance remain pending.
+<!-- notebook-04-full-history-entropy_04_v1:end -->
+
+<!-- notebook-04-technical-review-entropy_04_v1:start -->
+## Notebook 04 — full-history technical review
+
+Review date: 2026-11-01.
+
+Raymond Fendi:
+- Executed the full-history entropy calculations and validation cells.
+- Supplied execution outputs and reported interrupted runs.
+- Executed checkpoint-based recovery and full-history reporting.
+
+OpenAI Codex:
+- Reviewed saved validation reports, helper logic and file inventory.
+- Checked source/dependency hashes and aggregate reconciliation.
+- Confirmed all 582,972 recorded daily check values were zero.
+- Documented persistent short-window sample-entropy support limitations.
+- Supplied recovery code addressing temporary-file readback and sharing locks.
+
+Technical review passed.
+No feature recalculation or parameter change is required.
+Estimator usefulness remains for the planned later comparison.
+<!-- notebook-04-technical-review-entropy_04_v1:end -->
