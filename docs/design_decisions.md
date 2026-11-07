@@ -285,3 +285,120 @@ Technical review passed.
 No feature recalculation or parameter change is required.
 Estimator usefulness remains for the planned later comparison.
 <!-- notebook-04-technical-review-entropy_04_v1:end -->
+
+<!-- risk-interpretation-and-targets-2026-11-05:start -->
+## Inventory-aware interpretation and forecasting design
+
+Status:
+- Business objective and initial forecasting choices: agreed.
+- Indicator thresholds, combined grades and operational exit mappings: provisional.
+
+Decision:
+After a simulated trade, interpret the available indicators jointly and
+relative to the dealer's position. Produce good/medium/bad assessments
+and select an intended exit horizon from 1, 30 or 60 seconds.
+
+Rationale:
+The research investigates whether indicator-guided risk retention and
+disposal improve outcomes under explicit simulation assumptions.
+
+Execution:
+Allow one or more clips. Record desired exits separately from actual fills,
+remaining inventory and P&L.
+
+Required design discussion:
+- Notebook 09: interpretation's interaction with inventory retention.
+- Notebook 10: dedicated indicator criteria, aggregation, conflicting
+  signals, risk overrides, exit timing and clip execution.
+- Notebook 11: controlled policy comparison and evaluation.
+
+The illustrative low-volatility/low-entropy/upward-forecast case is
+a candidate policy pattern, not a finalized rule.
+
+Notebook 05 agreements:
+- Signed future mid-price changes in pips.
+- Forecast horizons: 30 and 60 seconds.
+- Continuity-eligible real and interpolated outcome prices.
+- Initial training period: calendar year 2018.
+- Training eligibility and purging must respect complete label information,
+  including any required right anchor after the nominal forecast endpoint.
+
+Still to agree:
+Validation and final-evaluation periods, training-row frequency,
+endpoint freshness and exclusion-boundary handling.
+<!-- risk-interpretation-and-targets-2026-11-05:end -->
+
+<!-- notebook_05_targets_v2:start -->
+## Notebook 05 — target design
+- Agreed: examples every 10 seconds; future mid changes over 30 and 60 seconds.
+- Reference: latest real quote known at issue time; retain its timestamp and age.
+- Future prices: eligible real and reconstructed observations.
+- Reject intervals crossing exclusions or disruptions. Keep each horizon independent.
+- Preserve valid synthetic outcomes before a dead zone.
+- Label availability: latest information time across the whole interval.
+- Purge labels not fully available before their assigned split ends.
+- Train: 2018. Validate: January–June 2019. Final evaluation: 2026 through October 16.
+- Notebook 06 will output both predicted pips and expected EURUSD rates.
+- No model or trading rule is fitted here.
+<!-- notebook_05_targets_v2:end -->
+
+<!-- notebook_06_design_v1:start -->
+## Notebook 06 — initial regression experiment
+- Agreed: two LightGBM models, predicting 30- and 60-second price changes.
+- MAE training loss; conditional median point forecasts. No P&L prediction.
+- MAE in pips is primary; RMSE in pips is secondary.
+- Six groups: past changes, displayed sizes, spread, MA distances, SampEn and CE.
+- Past changes: 10/30/60 seconds and 3/5/15 minutes.
+- All ten completed-candle SMA/EMA distance columns: 15/30/60/100/200.
+- Both entropy families use 3/5/15/30/60-minute scores.
+- Retain valid target examples with missing features; native missing handling.
+- Current mid/spread/sizes use the last known real quote.
+- Historical reconstructed prices enter only after their information is available.
+- Past changes need fresh continuous history after actual data gaps.
+- Quotes in excluded clock hours can provide history; target exclusions still apply.
+- Preserve MA history and the established entropy restart rules.
+- Fit on 2018; choose tree count using January-March 2019.
+- Early-stopping label information must be available before April 1.
+- Compare the fixed models on April-June 2019. Keep 2026 untouched.
+- Conservative single parameter configuration; no tuning search or blending.
+- Benchmarks: zero change, trailing horizon change and ridge.
+- Trailing baseline falls back to zero change when its history is unavailable.
+- Ridge uses training-only mean imputation and scaling; source features stay missing.
+- Forecast timestamps cover both fitting and early-stopping information.
+- April 1 model readiness is a research clock assumption, not measured fit latency.
+- Zero modeled inference latency is provisional until replay design.
+- Export forecasts without future outcomes or future eligibility flags.
+- Later group-removal tests require a separate agreed diagnostic experiment.
+- After April-June informs changes, assess the revised specification on a later development block.
+- Feature gain is descriptive; it is not a statistical-significance test.
+<!-- notebook_06_design_v1:end -->
+
+<!-- short_ma_variation_v1:start -->
+## Short-MA input variation
+- Raymond Fendi requested testing the shorter MA input combination after weak baseline gains.
+- Keep SMA 15 and EMA 15 distance inputs; remove the eight longer-MA distances.
+- Other feature groups, labels, 2018 training and January-March stopping rules remain unchanged.
+- Retrain only the two reduced models, with the original parameters and budget.
+- April-June is development evidence; July-September is fresh validation.
+- Require fresh-validation label information before October 1, 2019.
+- The reduced model's information cutoff includes the April-June-informed input choice.
+- Its research-clock availability begins July 1; April-June predictions are retrospective.
+- Keep original models and upstream data; use separate versioned result files.
+- Compare matched observations using MAE primary and RMSE secondary.
+- Fewer inputs do not by themselves establish better forecasting or prove overfitting.
+- No significance test or automatic model promotion is performed.
+- Further changes informed by July-September require a later fresh development block.
+- Keep 2026 reserved.
+<!-- short_ma_variation_v1:end -->
+
+<!-- notebook06_group_tests_regression_06_group_tests_v1:start -->
+- Experiment: regression_06_group_tests_v1; fingerprint f761bd52ecbf0f47277b5b617626c45a75644d7519394a01c3887bb8fc9138b1.
+- Raymond Fendi requested input-removal tests to investigate MAE improvement.
+- Agreed: 21-input reference, six grouped omissions at each horizon; 2018 training and January-March 2019 stopping remain fixed.
+- Q4 2019 selects removals; Q1 2020 checks the combined candidate. 2026 remains reserved.
+- MAE is primary, RMSE secondary. Undefined inputs remain missing.
+- Five-active-date paired bootstrap is primary; one-date sensitivity; Holm correction across 12 tests and a separate two-test confirmation family.
+- Intervals are pointwise and approximate, conditional on fixed models and the evaluation quarter. Inconclusive does not mean irrelevant.
+- Selected groups: {"30s": [], "60s": []}.
+- Execution checks passed. Human interpretation and any model promotion remain pending; no upstream definitions or models were replaced.
+<!-- notebook06_group_tests_regression_06_group_tests_v1:end -->

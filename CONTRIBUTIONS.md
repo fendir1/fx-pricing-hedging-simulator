@@ -190,3 +190,84 @@ Technical review passed.
 No feature recalculation or parameter change is required.
 Estimator usefulness remains for the planned later comparison.
 <!-- notebook-04-technical-review-entropy_04_v1:end -->
+
+<!-- risk-interpretation-and-targets-2026-11-05:start -->
+## Research direction — 2026-11-05
+
+Raymond Fendi:
+- Reaffirmed that the simulator should choose risk-exit timing after simulated trades.
+- Defined intended exit horizons of 1, 30 and 60 seconds.
+- Required joint interpretation of moving-average distances, multiscale
+  volatility, entropy and gradient-boosted EURUSD forecasts.
+- Required good/medium/bad interpretations relative to the dealer's exposure.
+- Supplied an illustrative combination of low volatility, low entropy,
+  an upward 60-second forecast and price above two SMA and two EMA lines.
+- Required exits to permit one or more transactions and record execution and P&L.
+- Requested a dedicated interpretation-policy discussion before implementation.
+- Agreed initial targets of future mid-price changes over 30 and 60 seconds.
+- Required continuity-eligible real and interpolated prices to be eligible outcomes.
+- Selected the entire 2018 calendar year as the initial training period.
+
+OpenAI Codex:
+- Clarified the measurement, forecast, interpretation and action layers.
+- Identified tick-level execution timing as necessary for the one-second exit option.
+- Required interpolated labels to retain their complete information-availability times.
+- Prepared this documentation cell.
+
+Operational thresholds and exit mappings have not been finalized.
+No forecasting model or exit policy has been implemented by this record.
+<!-- risk-interpretation-and-targets-2026-11-05:end -->
+
+<!-- notebook_05_contributions_v2:start -->
+## Notebook 05 — Raymond Fendi's agreed design
+- Defined the simulator's purpose: use trend, MA distances, volatility and entropy
+  to decide how quickly to dispose of a simulated position.
+- Requested side-dependent good/medium/bad interpretation and intended exits at
+  1, 30 or 60 seconds, potentially in several clips.
+- Requested a dedicated interpretation discussion before trading rules are built.
+- Chose 10-second examples, 30/60-second forecasts, eligible synthetic outcomes,
+  2018 training, first-half 2019 validation and the 2026 final evaluation period.
+- Requested both predicted change in pips and the corresponding expected rate.
+- OpenAI Codex supplied the replacement notebook, helper code and validation code.
+- Execution evidence for this run: full history, 3939 days through 2026-10-16; machine checks passed.
+- Human acceptance of these replacement outputs remains pending.
+- Good/medium/bad thresholds and their exit mapping remain provisional.
+- Results pending execution and validation.
+<!-- notebook_05_contributions_v2:end -->
+
+<!-- notebook_06_contributions_v1:start -->
+## Notebook 06 — agreed contributions
+- Raymond Fendi chose LightGBM and two joint models using all six feature groups.
+- Requested every agreed SMA and EMA lookback, plus sample and conditional entropy.
+- Chose MAE primary, RMSE secondary and MAE training loss.
+- Agreed the six price-change lookbacks and the two 2019 validation roles.
+- Chose to retain valid examples with missing inputs.
+- Requested concise performance tables and a 30-second forecast-price example.
+- Clarified that P&L must come from simulated trades and accounting.
+- Requested later evaluation of each group's additional forecasting value.
+- OpenAI Codex supplied the notebook, implementation and inline validation code.
+- This executed run produced two LightGBM models and benchmark comparisons.
+- Output interpretation and human review remain pending.
+<!-- notebook_06_contributions_v1:end -->
+
+<!-- short_ma_variation_v1:start -->
+## Short-MA variation
+- Raymond Fendi proposed input experiments to improve forecasting and selected the shortest MA pair.
+- Agreed July-September 2019 as the fresh validation period.
+- Requested keeping the experiment in Notebook 06 with an explanatory Markdown cell.
+- OpenAI Codex verified the shortest pair is SMA 15 / EMA 15 and supplied the appended cells.
+- This executed variation retrained two models and produced matched comparison reports.
+- Interpretation, improvement and any overfitting conclusion remain pending review.
+<!-- short_ma_variation_v1:end -->
+
+<!-- notebook06_group_tests_regression_06_group_tests_v1:start -->
+- Experiment: regression_06_group_tests_v1; fingerprint f761bd52ecbf0f47277b5b617626c45a75644d7519394a01c3887bb8fc9138b1.
+- Raymond Fendi requested input-removal tests to investigate MAE improvement.
+- Agreed: 21-input reference, six grouped omissions at each horizon; 2018 training and January-March 2019 stopping remain fixed.
+- Q4 2019 selects removals; Q1 2020 checks the combined candidate. 2026 remains reserved.
+- MAE is primary, RMSE secondary. Undefined inputs remain missing.
+- Five-active-date paired bootstrap is primary; one-date sensitivity; Holm correction across 12 tests and a separate two-test confirmation family.
+- Intervals are pointwise and approximate, conditional on fixed models and the evaluation quarter. Inconclusive does not mean irrelevant.
+- Selected groups: {"30s": [], "60s": []}.
+- Execution checks passed. Human interpretation and any model promotion remain pending; no upstream definitions or models were replaced.
+<!-- notebook06_group_tests_regression_06_group_tests_v1:end -->

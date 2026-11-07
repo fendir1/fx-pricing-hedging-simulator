@@ -113,3 +113,12 @@ Conditional entropy, sample entropy and spread-to-price transfer entropy
 retain their agreed definitions, support counts and availability timestamps.
 Short-window sample-entropy limitations remain documented.
 <!-- notebook-04-entropy_04_v1:end -->
+
+<!-- notebook_06_method_v1:start -->
+## Forecasting development
+- Notebook 05: complete 30/60-second labels and chronological splits.
+- Notebook 06: two MAE-trained LightGBM models and benchmark comparisons.
+- Training: 2018; early stopping: January-March 2019; comparison: April-June 2019.
+- Final evaluation: 2026, reserved. Forecasts do not predict P&L.
+- Results pending execution and validation.
+<!-- notebook_06_method_v1:end -->
