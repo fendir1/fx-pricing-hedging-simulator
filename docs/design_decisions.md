@@ -402,3 +402,14 @@ endpoint freshness and exclusion-boundary handling.
 - Selected groups: {"30s": [], "60s": []}.
 - Execution checks passed. Human interpretation and any model promotion remain pending; no upstream definitions or models were replaced.
 <!-- notebook06_group_tests_regression_06_group_tests_v1:end -->
+
+<!-- notebook06_regression_06_sizes_spread_v1:start -->
+- Run: regression_06_sizes_spread_v1; fingerprint ba65a1f9828279dc1e34fa16cc94b8eb92f6c167fd414ee17ca8a97ff095f62b.
+- Raymond Fendi requested a two-model variation using only bid size, ask size and spread following the reported group-removal results.
+- This is a requested joint-removal experiment; the omitted groups have not been established as irrelevant.
+- Training remains all of 2018; stopping remains January-March 2019. Parameters, MAE objective and valid training rows remain fixed.
+- April-June 2020 is the fresh development comparison; Q4 2019 and Q1 2020 informed this recipe and are already used development evidence. 2026 remains reserved.
+- Compare both horizons with frozen 21-input models and zero change; paired five-active-date bootstrap, one-date sensitivity, Holm family of four.
+- MAE is primary and RMSE secondary. Missing inputs remain missing. Forecasts retain availability and information cutoffs.
+- Execution checks passed. Results await human interpretation; no model was promoted and no upstream output was replaced.
+<!-- notebook06_regression_06_sizes_spread_v1:end -->
